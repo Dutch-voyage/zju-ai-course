@@ -1,0 +1,7 @@
+# data
+*.pkl
+*.pt
+*.npz
+
+# python
+__pycache__
