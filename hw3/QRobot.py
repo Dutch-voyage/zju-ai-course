@@ -93,6 +93,7 @@ class QRobot(object):
 
         self.create_Qtable_line(self.state)  # 对当前状态，检索Q表，如果不存在则添加进入Q表
 
+        # 重要
         action = random.choice(self.valid_action) if random.random() < self.epsilon else max(
             self.q_table[self.state], key=self.q_table[self.state].get)  # 选择动作
 
@@ -102,6 +103,7 @@ class QRobot(object):
 
         self.create_Qtable_line(next_state)  # 对当前 next_state ，检索Q表，如果不存在则添加进入Q表
 
+        # 重要
         self.update_Qtable(reward, action, next_state)  # 更新 Q 表 中 Q 值
         self.update_parameter()  # 更新其它参数
 
